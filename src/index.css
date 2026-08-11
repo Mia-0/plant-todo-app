@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --color-leaf-50: #F1F8E9;
+  --color-leaf-100: #E8F5E9;
+  --color-leaf-200: #C8E6C9;
+  --color-leaf-300: #A5D6A7;
+  --color-leaf-400: #81C784;
+  --color-leaf-500: #66BB6A;
+  --color-leaf-600: #4CAF50;
+  --color-leaf-700: #43A047;
+  --color-leaf-800: #388E3C;
+  --color-leaf-900: #2E7D32;
+  --color-gold: #F9A825;
+  --color-gold-light: #FFF8E1;
+  --color-amber-50: #FFF8E1;
+  --color-amber-100: #FFECB3;
+  --color-amber-200: #FFE082;
+  --color-amber-300: #FFD54F;
+  --color-amber-400: #FFCA28;
+  --color-amber-500: #FFC107;
+  --color-amber-600: #FFB300;
+  --color-amber-700: #FFA000;
+  --color-amber-800: #FF8F00;
+  --color-amber-900: #FF6F00;
+  --color-orange-50: #FFF3E0;
+  --color-orange-100: #FFE0B2;
+  --color-orange-200: #FFCC80;
+  --color-orange-300: #FFB74D;
+  --color-orange-400: #FFA726;
+  --color-orange-500: #FF9800;
+  --color-orange-600: #FB8C00;
+  --color-orange-700: #F57C00;
+  --color-orange-800: #EF6C00;
+  --color-orange-900: #E65100;
+  --color-blue-50: #E3F2FD;
+  --color-blue-100: #BBDEFB;
+  --color-blue-200: #90CAF9;
+  --color-blue-300: #64B5F6;
+  --color-blue-400: #42A5F5;
+  --color-blue-500: #2196F3;
+  --color-blue-600: #1E88E5;
+  --color-blue-700: #1976D2;
+  --color-blue-800: #1565C0;
+  --color-blue-900: #0D47A1;
+  --color-purple-50: #F3E5F5;
+  --color-purple-100: #E1BEE7;
+  --color-purple-200: #CE93D8;
+  --color-purple-300: #BA68C8;
+  --color-purple-400: #AB47BC;
+  --color-purple-500: #9C27B0;
+  --color-purple-600: #8E24AA;
+  --color-purple-700: #7B1FA2;
+  --color-purple-800: #6A1B9A;
+  --color-purple-900: #4A148C;
+  --color-pink-50: #FCE4EC;
+  --color-pink-100: #F8BBD0;
+  --color-pink-200: #F48FB1;
+  --color-pink-300: #F06292;
+  --color-pink-400: #EC407A;
+  --color-pink-500: #E91E63;
+  --color-pink-600: #D81B60;
+  --color-pink-700: #C2185B;
+  --color-pink-800: #AD1457;
+  --color-pink-900: #880E4F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #333333;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8E6C9;
+  border-radius: 2px;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); }
+}
+
+@keyframes coin-fall {
+  0% { transform: translateY(-40px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(40px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+.animate-coin-fall {
+  animation: coin-fall 0.8s ease-in forwards;
+}
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
